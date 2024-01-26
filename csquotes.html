@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Popup Example</title>
+</head>
+<body>
+<style>
+.image-container {
+    position: relative;
+    text-align: center;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.popup code {
+    display: block;
+    white-space: pre-wrap;
+}
+
+#close-popup {
+    margin-top: 10px;
+}
+</style>
+<div class="image-container">
+    <img src="your-image.jpg" alt="Click me" id="popup-trigger">
+    <div class="popup" id="code-popup">
+        <!-- Your code content goes here -->
+        <pre><code>// Your code
+console.log("Hello, World!");
+</code></pre>
+        <button id="close-popup">Close</button>
+    </div>
+</div>
+
+<script>
+document.getElementById('popup-trigger').addEventListener('click', function() {
+    document.getElementById('code-popup').style.display = 'block';
+});
+
+document.getElementById('close-popup').addEventListener('click', function() {
+    document.getElementById('code-popup').style.display = 'none';
+});
+</script>
+</body>
+</html>

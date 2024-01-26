@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS141 Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <style>
+        pre {
+            background-color: #272822;
+            border: 5px solid #373832;
+            padding: 5px;
+            overflow-x: auto;
+            margin: 20px;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #f8f8f2;
+        }
+    </style>
+</head>
+ <body>
+    <!--HEADER-->
+    <header style="background-color:#0070D2;
+    border:solid black 1px;text-align:center">
+     <p><b>Try to find a better solution</b></p>
+    </header>
+    <!--MAIN-->
+    <main style="border:dotted grey 3px">
+    <!--CUMBACK LOGO-->
+     <img src="LOGO.jpg"alt="comeback" width="128" height="128"><br><br>
+     <!--Assignment 1-->
+<pre><code class="language-python">#ASSIGNMENT-1
+x=input("Enter 1st integer : ")
+y=input("enter 2nd integer : ")
+z=input("enter 3rd integer : ")
+if y&lt;=x>=z :
+    print("maximum value is ",x)
+elif x&lt;=y>=z :
+    print("maximum value is ",y)
+elif y&lt;=z>=x :
+    print("maximum value is ",z)
+if y>=x&lt;=z :
+    print("minimum value is ",x)
+elif x>=y&lt;=z :
+    print("minimum value is ",y)
+elif y>=z&lt;=x :
+    print("minimum value is ",z)
+</code></pre>
+     <!--Assignment-2-->
+<pre><code class="language-python">#ASSIGNMENT-2
+w=27/2
+m=21
+l=39
+z=int(input("who shot it? (1 or 2) "))
+s=input("is it a service(y/n)")
+x=float(input("x-coordinate"))
+y=float(input("y-coordinate"))
+if z==1:
+  if ((s=='y') and(-w&lt;=x&lt;=0) and(0&lt;=y&lt;=m)) or ((s=='n') and(-w&lt;=x&lt;=w) and(0&lt;=y&lt;=l)) :
+    print("valid")
+  else :
+    print("invalid")
+elif z==2:
+  if ((s=='y') and(-w&lt;=x&lt;=0) and(-m&lt;=y&lt;=0)) or ((s=='n') and(-w&lt;=x&lt;=w) and(-l&lt;=y&lt;=0)) :
+    print("valid")
+  else :
+    print("invalid")
+else:
+    print("something went wrong")
+</code></pre>
+     <!--Assignment-3-->
+<pre><code class="language-python">#ASSIGNMENT-3
+c=int(input("enter '0' to convert decimal to binary or '1' to convert binary to decimal : "))
+if c==0 :
+  b=""
+  d=int(input("enter a decimal (base 10) whole number : "))
+  if d==0:
+    print('0')
+  else:
+    while d>0 :
+      b=str(d%2)+b
+      d=d//2
+  print("binary:",b)
+elif c==1 :
+  d=0
+  b=list(input("enter a binary(base 2) number : "))
+  t=1
+  while len(b)>=t :
+    p=len(b)-t
+    m=int(b[t-1])
+    d+=int(m*(2**p))
+    t+=1
+  print("decimal:",d)
+</code></pre>
+     <!--Assignment-4-->
+<pre><code class="language-python">#ASSIGNMENT-4
+l=[2]
+p=3
+while len(l)&lt;50 :
+  i=2
+  while i&lt;p:
+    if p%i==0 :
+      break
+    i+=1
+  if i==p :
+    l.append(p)
+  p+=1
+print(l)
+
+
+
+n=int(input("enter a natural number >=2\n"))
+if n&lt;2 :
+  print("enter a natural number >=2")
+elif n==2 :
+  print("Pseudoprime")
+else :
+    j=0
+    i=l[j]
+    while j&lt;len(l) and i&lt;n:
+      if n%i==0 :
+        print("not prime")
+        break
+      j+=1
+      i=l[j]
+    if j==len(l) or i>=n :
+      print("Pseudoprime")
+</code></pre>
+     <!--Lab Test-1-->
+<pre><code class="language-python">#LAB TEST-1
+</code></pre>
+     <!--Assignment-5-->
+<pre><code class="language-python">#ASSIGNMENT-5
+#input
+n = int (input ('Enter a number\n'))
+
+#factorization
+def factorize(x) :
+  factors=[]
+  t=2
+  while t&lt;=x :
+    if x%t==0 :
+      factors.append(t)
+    t+=1
+  return factors
+
+#prime factors
+def prime(l) :
+  prime_factors=[]
+  i=0
+  while (i &lt;len(l)) :
+    x=l[i]
+    t = 2
+    while (t &lt;x):
+      if (x%t == 0):
+        break
+      t = t + 1
+    if (t == x):
+      prime_factors.append(x)
+    i+=1
+  return prime_factors
+
+print("factors of",n,"are",prime(factorize(n)))
+
+# powers of prime factors
+def powers(l) :
+  powers=[]
+  i=0
+  while i&lt;len(l)) :
+    x=l[i]
+    j=0
+    while n%(x**(j+1))==0 :
+      j+=1
+    powers.append(j)
+    j=0
+    i+=1
+  return powers
+
+print("powers corrosponding to the prime factors", powers(prime(factorize(n))))
+
+#prime factorization
+def fun(m,n) :
+  i=0
+  l=[]
+  while (i&lt;len(m)) :
+
+    l.append(str(m[i]) + "^" + str(n[i]))
+    i+=1
+  return l
+
+print(n,"=",fun(prime(factorize(n)),powers(prime(factorize(n)))))
+</code></pre>
+     <!--Assignment-6-->
+<pre><code class="language-python">#ASSIGNMENT-6
+print("want to calculate x^n  !,input x and n")
+x=float(input("x = "))
+n=int(input("n = "))
+
+count = 0
+loop_count=0
+def f(x,n):
+  global count
+  count += 1
+  j=0
+  y=1
+  while j&lt;n:
+    global loop_count
+    loop_count+=1
+    y=y*x
+    j+=1
+  if y%1==0:
+    y= int(y)
+  return y
+print(f(x,n))
+print("number of calls of f: ",count)
+print("number of calls of while loop in f:",loop_count)
+
+count = 0
+def g(x,n) :
+  global count
+  count += 1
+  if n==0 :
+    return 1
+  else :
+    y = x * g(x,n-1)
+  if y%1==0 :
+    y=int(y)
+  return y
+print(g(x,n))
+print("number of calls of g: ",count)
+
+count = 0
+def h(x,n):
+  global count
+  count += 1
+  if n==1 :
+    return x
+  elif n%2==0 :
+    z=h(x,n/2)
+    y= z*z
+  else :
+    y= x * h(x,n-1)
+  if y%1==0 :
+    y=int(y)
+  return y
+print(h(x,n))
+print("number of calls of h: ",count)
+</code></pre>
+     <!--Assignment-7-->
+<pre><code class="language-python">#ASSIGNMENT-7
+#input
+##presets
+print("\033[36mmarks should be between 0 to 100\033[0m")
+print("\033[36mTo update the details of a student enter the new data with same rollno. again instead of another student \033[0m")
+T=[]
+D={}
+i=1
+##asking inputs
+while True:
+    try:
+        n=int(input("how many students? : "))
+        break
+    except ValueError:
+        print("\033[1;46;37minput should be an integer\033[0m")
+while i&lt;=n:
+  print("\033[36;40m  student",i," : \033[0m")
+  r=input("roll no. of the student "+str(i)+" = ")
+###physics
+  while True:
+            try:
+                p=int(input("marks obtained by student "+str(i)+" in physics = "))
+                if 0&lt;=p&lt;=100 :
+                    break
+                else:
+                    print("\033[31mOut of range\033[0m")
+                    continue
+            except ValueError:
+                print("\033[31minput didn't look like an integer\033[0m")
+###computer science
+  while True:
+            try:
+                c=int(input("marks obtained by student "+str(i)+" in computer science = "))
+                if 0&lt;=c&lt;=100 :
+                    break
+                else:
+                    print("\033[35mOut of range\033[0m")
+                    continue
+            except ValueError:
+                print("\033[35minput didn't look like an integer\033[0m")
+###mathematics
+  while True:
+            try:
+                m=int(input("marks obtained by student "+str(i)+" in mathematics = "))
+                if 0&lt;=m&lt;=100 :
+                    break
+                else:
+                    print("\033[33mOut of range\033[0m")
+                    continue
+            except ValueError:
+                print("\033[33minput didn't look like an integer\033[0m")
+###storing data
+  t=p+c+m
+  T.append(t)
+  D[r] = t
+  i+=1
+##printing input
+print("\033[36mINPUT: \033[0m")
+print("\033[33m",D,"\033[0m")
+
+#using sorted function on dictionaries
+def Ds(D) :
+  T=[]
+  S=[]
+  SD={}
+  for k,v in D.items():
+    T.append(v)
+  S=sorted(T, reverse=True)
+  for s in S :
+    for k,v in D.items() :
+      if v==s :
+        SD[k]=v
+  return(SD)
+##printing result
+print("\033[31mRESULT (by sorted function on dictionaries): \033[0m")
+print("\033[32m",Ds(D),"\033[0m")
+
+
+#without using the sorted function on dictionaries
+##defining max function for list
+def m(l) :
+  max=l[0]
+  for i in range(len(l)) :
+    if l[i]>max :
+      max=l[i]
+  return(max)
+##defining sorting function for dictionary
+def s(D) :
+  T=[]
+  SD={}
+  for k,v in D.items():
+    T.append(v)
+  while len(T)>0 :
+    for k,v in D.items():
+      if v==m(T) :
+        SD[k]=v
+    T.remove(m(T))
+  return(SD)
+##printing result
+print("\033[31mRESULT (without sorted function on dictionaries): \033[0m")
+print("\033[32m",s(D),"\033[0m")
+</code></pre>
+     <!--Assignment-8-->
+<pre><code class="language-python">#ASSIGNMENT-8
+#defining
+class List_operations:
+    L = []
+    
+    #assign
+    def list_assign(self):
+        while True:
+            try:
+                n = input("\033[0menter an \033[1minteger\033[0m to add to the list (type 'END' to end): ")
+                if n.upper() == 'END':
+                    break
+                else:
+                    self.L.append(int(n))
+            except ValueError:
+                print("\033[1;31minput should be an integer\033[0m")
+        print("\033[36mLIST IS CONSTRUCTED SUCCESSFULLY\033[0m")
+        return self.L
+    
+    #print
+    def list_print(self):
+        print(self.L)
+    
+    #reverse
+    def list_reverse(self):
+        self.L.reverse()
+    
+    #sort
+    def list_sort(self):
+        self.L.sort()
+    
+    #jth_smallest
+    def list_j(self):
+        if len(self.L)>0 :
+            while True:
+                try:
+                    j = int(input("Enter the value of j for the jth smallest element: "))
+                    if 0&lt;j&lt;=len(self.L) :
+                        break
+                    elif j>len(self.L):
+                        print(f"out of range (only {len(self.L)} element are there)")
+                    else :
+                        print("don't you think, your input should be greater than 0")
+                except ValueError:
+                    print("\033[31minput should be an integer\033[0m")
+            self.L.sort()
+            js=self.L[j-1]
+        else:
+            js="there is nothing in the list"
+        return js
+    
+    #zigzag
+    def list_zigzag(self):
+        M=[]
+        self.L.sort()
+        i = 0
+        j = int((len(self.L)+1)/ 2)
+        while j>i:
+            M.append(self.L[i])
+            if j+i&lt;len(self.L):
+                M.append(self.L[j+i])
+            i += 1
+        z=M
+        for i in range(len(M)-1) :
+            if M[i]==M[i+1] :
+                z="Unable to creat a proper zigzag list as you repeated a number ("+str(M[i])+")too much, it's what is created : ",M
+                break
+        return z
+
+# Applying
+P = List_operations()
+print("\033[0mlist_assign : ")
+P.list_assign()
+print("list_print : \033[36m",end="")
+P.list_print()
+
+print("\033[0mlist_reverse : ")
+P.list_reverse()
+print("list_print : \033[36m",end="")
+P.list_print()
+
+print("\033[0mlist_sort : ")
+P.list_sort()
+print("list_print : \033[36m",end="")
+P.list_print()
+
+print("\033[0mprint(list_j : )")
+print("\033[36m",P.list_j())
+
+print("\033[0mprint(list_zigzag : )")
+print("\033[36m",P.list_zigzag(),"\033[0m")
+</code></pre>
+     <!--Lab Test-2-->
+<pre><code class="language-python">#LAB TEST-2
+</code></pre>
+     <!--Assignment-9-->
+<pre><code class="language-python">#ASSIGNMENT-9
+class citizen_india:
+    def __init__(self, identity_number, annual_income):
+        self.identity_number = identity_number
+        self.annual_income = annual_income
+        self.list_citizen = []  
+
+    def list_assign(self):
+        while True:
+            try:
+                In = input("\033[0mEnter \033[1midentity number\033[0m (type 'END' to end): ")
+                if In.upper() == 'END':
+                    break
+                else:
+                    In = int(In)
+                    if In &lt; 0:
+                        print("\033[35mDont you think it should be a \033[1mnatural number\033[0;35m?\033[0m")
+                        continue
+
+                    while True:
+                        try:
+                            Ai = input(f"\033[0mEnter \033[1mannual income\033[0m of {In}\n(type 'WRONG' if wrong identity number): ")
+                            if Ai.upper() == 'WRONG':
+                                break
+                            else:
+                                Ai = int(Ai)
+                                if Ai > 0:
+                                    # Create an instance of CitizenIndia with provided values
+                                    citizen_instance = citizen_india(In, Ai)
+                                    self.list_citizen.append(citizen_instance)
+                                    break
+                                else:
+                                    print("\033[35mDont you think it should be a natural number?\033[0m")
+                                    continue
+                        except ValueError:
+                            print("\033[1;31minput should be a natural number\033[0m")
+            except ValueError:
+                print("\033[1;31minput should be a natural number\033[0m")
+
+        print("\033[36mLIST IS CONSTRUCTED SUCCESSFULLY\033[0m")
+
+    def sorting(self):
+        for i in range(len(self.list_citizen)-1):
+            for j in range(i+1, len(self.list_citizen)):
+                if self.list_citizen[i].annual_income &lt; self.list_citizen[j].annual_income:
+                    self.list_citizen[i], self.list_citizen[j] = self.list_citizen[j], self.list_citizen[i]
+        for i in range(len(self.list_citizen)):
+            print(self.list_citizen[i].identity_number, '->', self.list_citizen[i].annual_income)
+        return self.list_citizen
+
+# Output
+citizens = citizen_india(None,None)
+citizens.list_assign()
+citizens.sorting()
+</code></pre>
+     <!--Final Lab Test-->
+<pre><code class="language-python">#FINAL LAB TEST
+</code></pre>
+
+    </main>
+    <footer style="border:solid 1px;background-color:black;color:pink;text-align:center">
+      <p>made with<3</p>
+      <a href="cs141.html" style="color:cyan">ASSIGNMENTS</a>
+      <br><br>
+    </footer>
+ </body>
+</html>

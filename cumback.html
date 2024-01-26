@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <p> <title>cumback Home</title></p>
+ </head>
+ <body style="text-align:center">
+    <!--HEADER-->
+    <header style="background-color:orange;
+    border:solid black 1px">
+     <h1><i>ACADEMIC CUMBACK</i></h1>
+    </header>
+    <!--MAIN-->
+    <main style="border:dotted grey 3px"> 
+     <img src="LOGO.jpg"alt="comeback" width="128" height="128">
+     <p>Transforming Struggles into Strengths:<br>Welcome to <b>Academic Cumback</b></p>
+     <!--OUR FACULTIES-->
+     <style>
+     .CA{padding-left:20%;}
+     @media (min-width: 400px) {.CA{padding-left: 25%;}}
+     @media (min-width: 500px) {.CA{padding-left: 30%;}}
+     @media (min-width: 750px) {.CA{padding-left: 35%;}}
+     @media (min-width: 1000px) {.CA{padding-left: 40%;}}
+     @media (min-width: 1500px) {.CA{padding-left: 43%;}}
+     @media (min-width: 2000px) {.CA{padding-left: 45%;}}
+     @media (min-width: 2750px) {.CA{padding-left: 47%;}}
+     @media (min-width: 4500px) {.CA{padding-left: 48%;}}
+     </style>
+     <!--<style>.CA{padding-left:10vw}</style>-->
+     <div class="CA" style="font-size: 14px;text-align: left;">
+     <li><b>MATHEMATICS:</b> 
+     <a href="test.html" style="color:black;text-decoration: none;">Prof.Prag</a>
+     </li>
+     <li><b>BIO.:</b> 
+     <a href="AKSHAY CV.pdf" style="color:black;text-decoration: none;">Prof.Sexa</a>,
+     <a href="test.html" style="color:black;text-decoration: none;">Prof.Lulit</a>,
+     <a href="test.html" style="color:black;text-decoration: none;">Prof.Rana</a>
+     </li>
+     <li><b>CHEMISTRY:</b> 
+     <a href="test.html" style="color:black;text-decoration: none;">Prof.EΨ</a>,
+     <a href="test.html" style="color:black;text-decoration: none;">Prof.NAG🐍</a>
+     </li>
+     <li><b>PHYSICS:</b> 
+     <a href="test.html" style="color:black;text-decoration: none;">Prof.EΨ</a>,
+     <a href="test.html" style="color:black;text-decoration: none;">Prof.Prag</a>
+     </li>
+     <li><b>ECONOMICS:</b> 
+     <a href="test.html" style="color:black;text-decoration: none;">Lord.Arceus</a>
+     </li>
+      <li><b>C.S.:</b> 
+     <a href="test.html" style="color:black;text-decoration: none;">Prof.Prag</a>,
+     <a href="test.html" style="color:black;text-decoration: none;">Prof.Adi</a>,
+     <a href="test.html" style="color:black;text-decoration: none;">PrabhuBikash</a>
+     </li>
+     <li><b>T.COMMUNICATION:</b> 
+     <a href="ABHINAV CV.pdf" style="color:black;text-decoration: none;">Prof.Raj</a>
+     </li>
+     </div>
+     <!--THE FORM-->
+     <form id="F1" Name="Admisson form">
+     <h2>JOIN NOW!</h2>
+      <!--BATCH-->
+      <lebel for="d1">BATCH</lebel>
+       <select id="d1" Name="size">
+          <option>B1</option>
+          <option>B2</option>
+          <option selected>B3</option>
+          <option>B4</option>
+       </select>
+      <!--DESIGNATION-->
+      <lebel for="d2">DESIGNATION</lebel>
+       <select>
+           <option>PROF.</option>
+           <option>STUDENT</option>
+           <option>OTHER</option>
+       </select>
+      <br><br>
+      <!--NAME-->
+      <lebel for="t1">Name:</lebel>
+      <input type="text" id="t1" name="Name" placeholder="type your name here">
+      <br><br>
+      <!--EMAIL-->
+      <lebel for="t2">Email:</lebel>
+      <input type="email" id="t2" name="Email" placeholder="example@domain.com">
+      <br><br>
+      <!--SUBMIT-->
+      <b style="font-size:20px">➡️</b>
+          <input style="border-radius:5px;background-color:black;color:white;font-size:20px"
+      onclick="return verify()"
+      type="submit">
+      <b style="font-size:20px">⬅️️</b>
+      <p><b>*CLICK ON SUBMIT TO PROCEED*<b/></p>
+      <script>
+    function verify() {
+        var name = document.getElementById('t1').value;
+      var email = document.getElementById('t2').value;
+        if (name && email) 
+            {password=prompt("PASSWORD : ","password")
+            if (password==="AcAdEmIc CuMbAcK")
+                {alert('YOU ARE JOINED');
+                window.location.href = 'departments.html';}
+            else
+                {alert('Incorrect Password');}
+                return false;}
+        else
+            {alert('Please fill in all required fields before submitting.');
+            return false;}
+    }
+      </script>
+      </form>
+    </main>
+    <!--FOOTER-->
+    <footer style="border:solid 1px;background-color:black;color:pink">
+      <p>made with<3</p>
+      <a href="about us.html" style="color:cyan">Know more about us</a>
+      <br>
+      <p></p>
+    </footer>
+ </body>
+</html>
