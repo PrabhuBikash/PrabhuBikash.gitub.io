@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <p> <title>about us</title></p>
+<script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
  </head>
  <body style="text-align:center">
     <header style="background-color:black;
@@ -124,8 +125,8 @@ And keep wondering why the practicals section is mine😉.</p><br>
     function show(pdf) {
         var popup = window.open('', '_blank', 'width=800,height=600');
         if (popup) {
-            var googleViewerUrl = 'https://docs.google.com/viewer?url=' + encodeURIComponent(pdf);
-            popup.location.href = googleViewerUrl;}
+            var viewerUrl = 'https://mozilla.github.io/pdf.js/web/viewer.html?file=' + encodeURIComponent(pdf);
+        popup.location.href = viewerUrl;}
           else {
             alert('Please allow pop-ups to view the PDF.');}
     }
