@@ -124,7 +124,8 @@ And keep wondering why the practicals section is mine😉.</p><br>
     function show(pdf) {
         var popup = window.open('', '_blank', 'width=800,height=600');
         if (popup) {
-            popup.document.write('<iframe src="' + pdf + '" width="100%" height="100%" frameborder="0"></iframe>');}
+            var googleViewerUrl = 'https://docs.google.com/viewer?url=' + encodeURIComponent(pdf);
+            popup.location.href = googleViewerUrl;}
           else {
             alert('Please allow pop-ups to view the PDF.');}
     }
