@@ -142,11 +142,10 @@ if (!(name && email)) {
     alert('Please fill in all required fields before submitting.');return false;}
 
 password=prompt("PASSWORD : ","password")
-if (password!=="AcAdEmIc CuMbAcK"){
-    alert('Incorrect Password');return false;}
-
-alert('YOU ARE JOINED')
-window.location.href = 'departments.html'
+if (password==="AcAdEmIc CuMbAcK"){
+    alert('YOU ARE JOINED')
+    window.location.href = 'departments.html';}
+else{alert('Incorrect Password');return false;}
     }
     </script> 
  
