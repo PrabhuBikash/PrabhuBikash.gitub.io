@@ -135,18 +135,25 @@
     <!--password-->
     <script>
 function verify() {
-var name = document.getElementById('t1').value;
-var email = document.getElementById('t2').value;
+    var name = document.getElementById('t1').value;
+    var email = document.getElementById('t2').value;
 
-if (!(name && email)) {
-    alert('Please fill in all required fields before submitting.');return false;}
-
-password=prompt("PASSWORD : ","password")
-if (password==="AcAdEmIc CuMbAcK"){
-    alert('YOU ARE JOINED')
-    window.location.href = 'https://prabhubikash.github.io/PrabhuBikash.gitub.io/departments.html';}
-else{alert('Incorrect Password');return false;}
+    if (!(name && email)) {
+        alert('Please fill in all required fields before submitting.');
+        return false;
     }
+
+    var password = prompt("PASSWORD : ", "password");
+
+    if (password !== "AcAdEmIc CuMbAcK") {
+        alert('Incorrect Password');
+        return false;
+    }
+
+    alert('YOU ARE JOINED');
+    window.location.href = 'departments.html';
+}
+
     </script> 
  
 </body>
